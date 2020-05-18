@@ -1,27 +1,29 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
-import { Text, SafeAreaView } from 'react-native'
+import { Text, SafeAreaView, TouchableOpacity } from 'react-native'
 import { createStructuredSelector } from 'reselect'
 import { connect } from 'react-redux'
 import * as actions from './actions'
 import makeSelectHome from './selectors'
 
-class Splash extends Component {
+class Home extends Component {
   render() {
     return (
       <SafeAreaView>
-        <Text>Hola soy el frmework</Text>
+        <TouchableOpacity onPress={this.handleOnPress}>
+          <Text>Hola soy el frmework</Text>
+        </TouchableOpacity>
       </SafeAreaView>
     )
   }
 }
 
-Splash.propTypes = {}
+Home.propTypes = {}
 
-Splash.navigationOptions = () => ({ headerShown: false })
+Home.navigationOptions = () => ({ headerShown: false })
 
 const mapStateToProps = createStructuredSelector({
   splash: makeSelectHome(),
 })
 
-export default connect(mapStateToProps, { ...actions })(Splash)
+export default connect(mapStateToProps, { ...actions })(Home)

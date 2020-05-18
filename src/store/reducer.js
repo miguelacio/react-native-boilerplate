@@ -1,8 +1,8 @@
 import { fromJS } from 'immutable'
 import { combineReducers } from 'redux-immutable'
 import { createNavigationReducer } from 'react-navigation-redux-helpers'
-import AppNavigator from 'src/navigation/AppNavigator'
 import home from 'src/screens/Home/reducer'
+import AppNavigator from 'src/navigation/AppNavigator'
 
 const appInitialState = fromJS({})
 

@@ -64,7 +64,7 @@ module.exports = {
       actions.push({
         type: 'modify',
         path: '../../src/navigation/AppNavigator.js',
-        pattern: /(import { StackNavigator } from 'react-navigation')/g,
+        pattern: /(import { connect } from 'react-redux')/g,
         template:
           "$1\nimport {{ properCase name }} from 'src/screens/{{ properCase name }}'",
       })
@@ -85,7 +85,7 @@ module.exports = {
       actions.push({
         type: 'modify',
         path: '../../src/store/reducer.js',
-        pattern: /(import { combineReducers } from 'redux')/g,
+        pattern: /(import { createNavigationReducer } from 'react-navigation-redux-helpers')/g,
         template:
           "$1\nimport {{camelCase name}} from 'src/screens/{{properCase name}}/reducer'",
       })
