@@ -1,0 +1,24 @@
+/**
+ * {{ properCase name }} HOC
+ */
+import React, { PureComponent } from 'react'
+// import PropTypes from 'prop-types'
+import {} from 'react-native'
+// import styles from './styles'
+
+const {{ camelCase name }} = WrappedComponent => {
+  // eslint-disable-next-line
+  return class extends PureComponent {
+    state = {}
+    componentDidMount = () => {
+      console.log(`ComponentMounts HOC {{ camelCase name }}`) // eslint-disable-line
+    }
+    static propTypes = {}
+
+    render() {
+      return <WrappedComponent {...this.props} />
+    }
+  }
+}
+
+export default {{ camelCase name }}

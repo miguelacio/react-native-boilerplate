@@ -1,0 +1,42 @@
+/**
+* {{ properCase name }}
+*/
+import React, { Component } from 'react'
+import { Text, View } from 'react-native'
+import { createStructuredSelector } from 'reselect'
+// import PropTypes from 'prop-types'
+{{#if wantActionsAndReducer}}
+import { connect } from 'react-redux'
+import * as {{ camelCase name }}Actions from './actions'
+{{/if}}
+import styles from './styles'
+import makeSelect{{ properCase name }} from './selectors'
+
+class {{ properCase name }} extends Component {
+render() {
+return (
+<View style={styles.container}>
+  <Text>{{ properCase name }}</Text>
+</View>
+)
+}
+}
+
+{{ properCase name }}.propTypes = {}
+
+// eslint-disable-next-line
+{{ properCase name }}.navigationOptions = ({ navigation, screenProps }) => ({
+title: '{{ properCase name }}',
+})
+
+{{#if wantActionsAndReducer}}
+const mapStateToProps = createStructuredSelector({
+{{ camelCase name }}:makeSelect{{ properCase name }}(),
+})
+{{/if}}
+
+{{#if wantActionsAndReducer}}
+export default connect(mapStateToProps, { ...{{ camelCase name }}Actions })({{ properCase name }})
+{{else}}
+export default {{ properCase name }}
+{{/if}}
